@@ -25,7 +25,7 @@
     }
 
 
-    h1 {
+    .main h1 {
         position: relative;
 
         font-family: 'RF Dewi', sans-serif;
@@ -35,9 +35,10 @@
         color: white;
     }
 
-    h2 {
+    .main h2 {
         font-family: 'RF Dewi Expanded', sans-serif;
         font-size: 16px;
+        font-stretch: expanded;
         line-height: 1.18em;
         letter-spacing: 0.08em;
         text-transform: uppercase;
@@ -48,7 +49,7 @@
     }
 
 
-    .lead::first-letter {
+    .article__lead::first-letter {
         font-family: 'RF Dewi Expanded', sans-serif;
         font-size: 73px;
         letter-spacing: 0.03em;
@@ -60,23 +61,75 @@
         float: left; /* Обтекание по правому краю */
     }
 
-    .lead {
+    .article__lead {
         clear: left;
     }
 
-    p {
+    .main p {
         font-family: 'RF Dewi', sans-serif;
         font-size: 12px;
         line-height: 1.64em;
         color: black;
     }
 
-    ol {
-        list-style: none;
+    .article__important {
         color: #b1b3b6;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
+    }
+
+    .main ol,
+    .main ul {
+        font-family: 'RF Dewi', sans-serif;
+        font-size: 12px;
+        line-height: 1.64em;
+        color: black;
+        list-style: none;
+        padding: 0;
+    }
+
+    .list--marker li::before {
+        color: #b1b3b6;
+        content: '-';
+        width: 14px;
+        height: 2px;
+        padding-right: 8px; /* Расстояние от маркера до текста */
+    }
+
+
+    .list--marker li {
+        font-family: 'RF Dewi', sans-serif;
+        font-size: 12px;
+        line-height: 1.64em;
+        color: black;
+        padding: 0 13px;
+    }
+
+
+    .main li {
+        color: black;
+    }
+
+    .main ol {
+        counter-reset: num;
+    }
+
+    .list--number li {
+        padding: 0 13px;
+    }
+
+    .list--number li::before {
+        position: relative;
+        font-size: 21px;
+        line-height: 1.7em;
+        letter-spacing: 0.03em;
+        content: counter(num) ' '; /* Выводим число */
+        counter-increment: num; /* Увеличиваем значение счётчика */
+        color: #b1b3b6;
+        padding: 0 0 0 5px;
+    }
+
+    .main a {
+        text-decoration: none;
+        color: blue;
     }
 }
 
@@ -92,20 +145,81 @@
         display: grid;
     }
 
-    .lead::first-letter {
+    .article__lead::first-letter {
         font-family: 'RF Dewi Expanded', sans-serif;
         font-size: 73px;
+        font-stretch: expanded;
         letter-spacing: 0.03em;
         color: #696969;
-
-
         padding: 3px; /* Поля вокруг первой буквы */
         margin-right: 5px; /* Отступ справа */
         float: left; /* Обтекание по правому краю */
     }
 
-    .lead {
+    .article__lead {
         clear: left;
+    }
+
+    .main p {
+        font-family: 'RF Dewi', sans-serif;
+        font-size: 12px;
+        line-height: 1.64em;
+        color: black;
+    }
+
+    .main ol,
+    .main ul {
+        font-family: 'RF Dewi', sans-serif;
+        font-size: 12px;
+        line-height: 1.64em;
+        color: black;
+        list-style: none;
+        padding: 0;
+    }
+
+    .list--marker li::before {
+        color: #b1b3b6;
+        content: '-';
+        width: 14px;
+        height: 2px;
+        padding-right: 8px; /* Расстояние от маркера до текста */
+    }
+
+
+    .list--marker li {
+        font-family: 'RF Dewi', sans-serif;
+        font-size: 12px;
+        line-height: 1.64em;
+        color: black;
+    }
+
+
+    .main li {
+        color: black;
+    }
+
+    .main ol {
+        counter-reset: num;
+    }
+
+    .list--number li {
+        padding: 0 13px;
+    }
+
+    .list--number li::before {
+        position: relative;
+        font-size: 21px;
+        line-height: 1.7em;
+        letter-spacing: 0.03em;
+        content: counter(num) ' '; /* Выводим число */
+        counter-increment: num; /* Увеличиваем значение счётчика */
+        color: #b1b3b6;
+        margin: 0 0 0 5px;
+    }
+
+    .main a {
+        text-decoration: none;
+        color: blue;
     }
 }
 
@@ -126,14 +240,15 @@
         grid-template-columns: 1fr 1fr;
     }
 
-    h1 {
+    .main h1 {
         font-size: 48px;
         line-height: 1.2em;
         color: black;
     }
 
-    h2 {
+    .main h2 {
         font-size: 24px;
+        font-stretch: expanded;
         line-height: 1.2em;
         letter-spacing: 0.08em;
         text-transform: uppercase;
@@ -144,7 +259,7 @@
         justify-content: flex-start;
     }
 
-    p {
+    .main p {
         font-family: 'RF Dewi', sans-serif;
         font-size: 21px;
         line-height: 1.7em;
@@ -152,7 +267,7 @@
         color: black;
     }
 
-    .lead::first-letter{
+    .article__lead::first-letter {
         font-family: 'RF Dewi Expanded', sans-serif;
         font-size: 73px;
         letter-spacing: 0.03em;
@@ -164,14 +279,59 @@
         float: left; /* Обтекание по правому краю */
     }
 
-    .lead {
+    .article__lead {
         clear: left;
     }
 
-
-    .article{
+    .article {
         display: grid;
         grid-template-columns: 1fr 2fr;
     }
-}
 
+    .main ol,
+    .main ul {
+        font-family: 'RF Dewi', sans-serif;
+        font-size: 21px;
+        line-height: 1.7em;
+        letter-spacing: 0.03em;
+        color: black;
+        list-style: none;
+        padding: 0;
+    }
+
+    .list--marker li {
+        font-family: 'RF Dewi', sans-serif;
+        font-size: 21px;
+        line-height: 1.7em;
+        letter-spacing: 0.03em;
+        color: black;
+    }
+
+    .list--marker li::before {
+        color: #b1b3b6;
+        content: '-';
+        width: 14px;
+        height: 2px;
+        padding-right: 23px; /* Расстояние от маркера до текста */
+    }
+
+    .main li {
+        color: black;
+    }
+
+    .main ol {
+        counter-reset: num;
+    }
+
+    .list--number li::before {
+        content: counter(num) ' '; /* Выводим число */
+        counter-increment: num; /* Увеличиваем значение счётчика */
+        color: #b1b3b6;
+        padding-right: 28px; /* Расстояние от маркера до текста */
+    }
+
+    .main a {
+        text-decoration: none;
+        color: blue;
+    }
+}
